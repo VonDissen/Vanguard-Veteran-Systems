@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vanguard Veteran Systems</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      background: #f5f7fa;
+      color: #24374a;
+    }
+
+    header {
+      background: #17395c;
+      padding: 14px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    .topbar {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      margin-bottom: 14px;
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      background: white;
+      color: #17395c;
+      padding: 22px 20px;
+      border-radius: 0;
+    }
+
+    .brand-wrap img {
+      height: 100px;
+      width: auto;
+      display: block;
+    }
+
+    .brand-text h1 {
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.1;
+      color: #17395c;
+    }
+
+    .brand-text p {
+      margin: 6px 0 0 0;
+      font-size: 16px;
+      color: #5a6b7c;
+    }
+
+    .hero {
+      background: #17395c;
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.08);
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .hero h2 {
+      font-size: 44px;
+      margin: 0 0 12px 0;
+    }
+
+    .hero p {
+      font-size: 25px;
+      margin: 0;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    .services {
+      padding: 80px 20px;
+      text-align: center;
+      background: white;
+    }
+
+    .services h2 {
+      font-size: 36px;
+      margin: 0 0 50px 0;
+    }
+
+    .service-grid {
+      display: flex;
+      gap: 34px;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .service {
+      max-width: 300px;
+      padding: 10px 8px;
+    }
+
+    .service h3 {
+      font-size: 22px;
+      margin: 0 0 12px 0;
+      color: #17395c;
+    }
+
+    .service p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #5a6b7c;
+      margin: 0;
+    }
+
+    .contact {
+      padding: 80px 20px;
+      text-align: center;
+      background: #f5f7fa;
+    }
+
+    .contact h2 {
+      font-size: 40px;
+      margin: 0 0 12px 0;
+      color: #17395c;
+    }
+
+    .contact p {
+      max-width: 760px;
+      margin: 0 auto 40px auto;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #5a6b7c;
+    }
+
+    .contact-logo {
+      margin: 0 auto 38px auto;
+    }
+
+    .contact-logo img {
+      max-width: 430px;
+      width: 80%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .button-main,
+    .button-secondary {
+      padding: 16px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      transition: 0.2s ease;
+      display: inline-block;
+    }
+
+    .button-main {
+      background: #c8a04a;
+      color: #17395c;
+      box-shadow: 0 10px 22px rgba(200, 160, 74, 0.22);
+    }
+
+    .button-secondary {
+      border: 2px solid #c7d1db;
+      color: #17395c;
+      background: transparent;
+    }
+
+    footer {
+      background: #17395c;
+      color: white;
+      text-align: center;
+      padding: 36px 20px;
+    }
+
+    footer img {
+      height: 72px;
+      width: auto;
+      display: block;
+      margin: 0 auto 18px auto;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 15px;
+      opacity: 0.95;
+    }
+
+    @media (max-width: 768px) {
+      .brand-wrap img {
+        height: 82px;
+      }
+
+      .brand-text h1 {
+        font-size: 24px;
+      }
+
+      .hero h2 {
+        font-size: 34px;
+      }
+
+      .hero p {
+        font-size: 21px;
+      }
+
+      .contact h2,
+      .services h2 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="topbar">Veteran-Owned Small Business • Service-Disabled Veteran-Owned</div>
+
+    <div class="brand-wrap">
+      <img src="vanguard-logo.png" alt="Vanguard Veteran Systems logo" />
+      <div class="brand-text">
+        <h1>Vanguard Veteran Systems</h1>
+        <p>Federal Supply &amp; Procurement Support</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-badge">Veteran-Owned • Federal Supply</div>
+    <h2>Vanguard Veteran Systems</h2>
+    <p>Sourcing &amp; Supply</p>
+  </section>
+
+  <section class="services">
+    <h2>Core Services</h2>
+
+    <div class="service-grid">
+      <div class="service">
+        <h3>Federal Sourcing</h3>
+        <p>Rapid sourcing of mission-critical supplies for federal agencies, prime contractors, and procurement teams.</p>
+      </div>
+
+      <div class="service">
+        <h3>Procurement Support</h3>
+        <p>Responsive support for vendor coordination, quote gathering, fulfillment follow-through, and acquisition assistance.</p>
+      </div>
+
+      <div class="service">
+        <h3>Sourcing &amp; Supply</h3>
+        <p>Reliable supply coordination built to support projects ranging from small requirements to larger mission-driven needs.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+
+    <p>
+      For sourcing inquiries, procurement support, contracting opportunities, or supplier coordination,
+      please contact Vanguard Veteran Systems directly.
+    </p>
+
+    <div class="contact-logo">
+      <img src="vanguard-logo.png" alt="Vanguard Veteran Systems logo" />
+    </div>
+
+    <div class="contact-buttons">
+      <a class="button-main" href="tel:8054412945">Call 805-441-2945</a>
+      <a class="button-secondary" href="sms:8054412945">Text Us</a>
+      <a class="button-secondary" href="mailto:raymond@vanguardveteransystems.com">Email Us</a>
+    </div>
+  </section>
+
+  <footer>
+    <img src="vanguard-logo.png" alt="Vanguard Veteran Systems logo" />
+    <p>© 2026 Vanguard Veteran Systems</p>
+  </footer>
+
+</body>
+</html>

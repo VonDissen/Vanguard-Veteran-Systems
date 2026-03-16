@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vanguard Veteran Systems</title>
+  <meta name="description" content="Vanguard Veteran Systems is a veteran-owned and service-disabled veteran-owned small business providing federal sourcing, supply, and procurement support from Austin, Texas." />
+  <style>
+    :root{
+      --navy:#0f2d4d;
+      --navy-2:#173f69;
+      --gold:#d4ab56;
+      --gold-dark:#bd9647;
+      --text:#17324d;
+      --muted:#5e7288;
+      --line:#dbe4ee;
+      --bg:#f5f8fc;
+      --shadow:0 18px 42px rgba(15,45,77,.10);
+      --radius:22px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.65;
+    }
+    a{text-decoration:none;color:inherit}
+    .container{width:min(var(--max), calc(100% - 32px)); margin:auto}
+
+    .topbar{
+      background:var(--navy);
+      color:#fff;
+      font-size:.92rem;
+    }
+    .topbar .container{
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      padding:10px 0;
+    }
+
+    .navbar{
+      background:#fff;
+      border-bottom:1px solid var(--line);
+      position:sticky;
+      top:0;
+      z-index:30;
+    }
+    .nav-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      min-height:92px;
+      gap:18px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:0;
+    }
+    .brand-logo{
+      width:72px;
+      height:auto;
+      display:block;
+      filter: drop-shadow(0 8px 18px rgba(15,45,77,.12));
+      flex-shrink:0;
+    }
+    .brand-title{
+      font-size:1.42rem;
+      font-weight:800;
+      line-height:1.05;
+    }
+    .brand-sub{
+      font-size:.92rem;
+      color:var(--muted);
+    }
+
+    .nav-links{
+      display:flex;
+      gap:24px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .nav-links a{
+      font-weight:700;
+      color:var(--muted);
+    }
+    .nav-links a:hover{color:var(--navy)}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 20px;
+      border-radius:999px;
+      font-weight:800;
+      border:1px solid transparent;
+      transition:.2s ease;
+      cursor:pointer;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{
+      background:var(--gold);
+      color:#1b2430;
+      box-shadow:0 10px 24px rgba(212,171,86,.30);
+    }
+    .btn-primary:hover{background:var(--gold-dark)}
+    .btn-outline{
+      background:#fff;
+      border-color:#bfd0e1;
+      color:var(--navy);
+    }
+
+    .hero{
+      background:linear-gradient(135deg,var(--navy) 0%, var(--navy-2) 55%, #1f4d7d 100%);
+      color:#fff;
+      padding:82px 0 88px;
+      overflow:hidden;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);
+      gap:34px;
+      align-items:start;
+    }
+    .hero-copy{
+      min-width:0;
+      padding-right:0;
+    }
+    .eyebrow{
+      display:inline-block;
+      padding:9px 15px;
+      border-radius:999px;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.18);
+      font-size:.82rem;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin-bottom:20px;
+    }
+    h1{
+      font-size:clamp(1.95rem, 3vw, 3.15rem);
+      line-height:1.04;
+      letter-spacing:-.03em;
+      margin:0 0 18px;
+      white-space:nowrap;
+      max-width:none;
+    }
+    .hero-tagline{
+      font-size:clamp(1.35rem, 2vw, 1.9rem);
+      font-weight:800;
+      letter-spacing:.02em;
+      margin:0 0 18px;
+      color:#ffffff;
+    }
+    .lead{
+      font-size:1.14rem;
+      color:#dce7f3;
+      max-width:60ch;
+      margin:0 0 28px;
+    }
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:26px;
+    }
+    .hero-meta{
+      display:flex;
+      gap:22px;
+      flex-wrap:wrap;
+      color:#d6e3f0;
+      font-weight:700;
+      font-size:.97rem;
+    }
+    .hero-card{
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:24px;
+      padding:28px;
+      box-shadow:0 20px 40px rgba(7,20,35,.18);
+      backdrop-filter: blur(6px);
+      overflow:hidden;
+      min-width:0;
+    }
+    .hero-card h3{
+      margin:0 0 14px;
+      font-size:1.8rem;
+    }
+    .hero-card p{
+      margin:0 0 16px;
+      color:#e5eef8;
+    }
+    .pill-wrap{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+    .pill{
+      display:inline-flex;
+      padding:10px 14px;
+      border-radius:12px;
+      background:rgba(255,255,255,.09);
+      border:1px solid rgba(255,255,255,.15);
+      font-weight:700;
+      color:#fff;
+    }
+
+    section{padding:70px 0}
+    .section-header{margin-bottom:26px}
+    .section-title{
+      font-size:clamp(2rem, 3vw, 2.9rem);
+      line-height:1.08;
+      margin:0 0 10px;
+    }
+    .section-copy{
+      margin:0;
+      color:var(--muted);
+      font-size:1.06rem;
+      max-width:74ch;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    .card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .card h3{
+      margin:0 0 12px;
+      font-size:1.45rem;
+    }
+    .card p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .cap-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+    }
+    .cap{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:24px 24px 24px 26px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .cap:before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:18px;
+      bottom:18px;
+      width:4px;
+      background:linear-gradient(180deg,var(--gold),var(--navy-2));
+      border-radius:4px;
+    }
+    .cap h3{
+      margin:0 0 8px;
+      font-size:1.24rem;
+    }
+    .cap p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .split{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+
+    .code-list{
+      display:grid;
+      gap:12px;
+    }
+    .code-row{
+      display:grid;
+      grid-template-columns:100px 1fr;
+      align-items:center;
+      gap:16px;
+      padding:14px 16px;
+      border-radius:14px;
+      background:#fff;
+      border:1px solid var(--line);
+      min-height:58px;
+    }
+    .code-label{
+      color:var(--muted);
+      font-weight:700;
+      white-space:nowrap;
+    }
+    .code-value{
+      font-weight:800;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .feature-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+    .mini-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+    .mini-card h3{
+      margin:0 0 10px;
+      font-size:1.25rem;
+    }
+    .mini-card p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .capstmt{
+      background:linear-gradient(135deg,#f7fbff 0%, #eef4fb 100%);
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:30px;
+      box-shadow:var(--shadow);
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:22px;
+      align-items:center;
+    }
+    .capstmt .btn{width:max-content}
+
+    .contact{
+      background:#fff;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+    .contact-wrap{
+      display:block;
+    }
+    .contact-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:28px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      min-width:0;
+    }
+    .contact-card.contact-main{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+    }
+    .contact-inline-logo{
+      width:min(340px, 100%);
+      height:auto;
+      display:block;
+      margin:0 auto 20px;
+      align-self:center;
+      filter: drop-shadow(0 10px 24px rgba(15,45,77,.10));
+    }
+    .contact-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+
+    footer{
+      padding:30px 0 48px;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+    .footer-brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+    .footer-logo{
+      width:70px;
+      height:auto;
+      display:block;
+      filter: drop-shadow(0 8px 16px rgba(15,45,77,.10));
+    }
+
+    @media (max-width:1240px){
+      h1{
+        font-size:clamp(1.9rem, 2.7vw, 2.75rem);
+      }
+    }
+
+    @media (max-width:1120px){
+      h1{white-space:normal}
+      .hero-grid{
+        grid-template-columns:1fr;
+      }
+      .code-row{
+        grid-template-columns:90px 1fr;
+      }
+      .code-value{
+        white-space:normal;
+        text-overflow:clip;
+      }
+    }
+
+    @media (max-width:980px){
+      .cards,.cap-grid,.split,.feature-grid,.capstmt{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width:760px){
+      .nav-links a:not(.btn){display:none}
+      .hero{padding:58px 0 66px}
+      .brand-title{font-size:1.18rem}
+      .brand-sub{font-size:.84rem}
+      .brand-logo{width:58px}
+      .contact-actions{justify-content:center}
+      .code-row{
+        grid-template-columns:1fr;
+        gap:6px;
+      }
+      .code-value{
+        white-space:normal;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container">
+      <div>Veteran-Owned Small Business • Service-Disabled Veteran-Owned</div>
+      <div>CAGE: 9GTX4 • SAM Registered Vendor</div>
+    </div>
+  </div>
+
+  <header class="navbar">
+    <div class="container nav-inner">
+      <div class="brand">
+        <img class="brand-logo" src="vanguard-logo.png" alt="Vanguard Veteran Systems logo" />
+        <div>
+          <div class="brand-title">Vanguard Veteran Systems</div>
+          <div class="brand-sub">Federal Supply &amp; Contracting Support</div>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#competencies">Core Competencies</a>
+        <a href="#codes">NAICS &amp; PSC</a>
+        <a href="#contact" class="btn btn-primary">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Veteran-Owned • Federal Supply Ready</div>
+          <h1>Vanguard Veteran Systems</h1>
+          <p class="hero-tagline">Sourcing &amp; Supply</p>
+          <p class="lead">
+            Vanguard Veteran Systems provides sourcing, supply, and contracting support for federal and commercial procurement requirements. Our approach emphasizes responsiveness, disciplined vendor coordination, and dependable execution across both routine and complex procurement needs.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:raymond@vanguardveteransystems.com">Request a Quote</a>
+            <a class="btn btn-outline" href="#capstmt">View Capabilities Statement</a>
+          </div>
+          <div class="hero-meta">
+            <div><strong>CAGE:</strong> 9GTX4</div>
+            <div><strong>Status:</strong> Veteran-Owned Small Business</div>
+            <div><strong>Location:</strong> Austin, Texas</div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h3>Company Profile</h3>
+          <p>
+            Vanguard Veteran Systems supports government procurement with a practical, responsive approach to sourcing products, coordinating suppliers, and supporting contract execution across a broad range of requirement types.
+          </p>
+          <p>
+            The company is structured to support both smaller procurement actions and larger supply opportunities, with service offerings designed to expand over time as mission needs and contracting opportunities evolve.
+          </p>
+          <div class="pill-wrap">
+            <span class="pill">Veteran-Owned</span>
+            <span class="pill">Service-Disabled Veteran-Owned</span>
+            <span class="pill">SAM Registered</span>
+            <span class="pill">Supply Ready</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">About Vanguard Veteran Systems</h2>
+          <p class="section-copy">
+            Vanguard Veteran Systems is structured to support federal sourcing and supply requirements with professionalism, reliability, and clear communication. The company emphasizes disciplined procurement support while maintaining the flexibility to scale from small purchase requirements to larger sourcing and supply efforts as capabilities continue to expand.
+          </p>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <h3>Federal Supply Support</h3>
+            <p>Responsive sourcing for industrial hardware, parts, tools, and other procurement requirements supporting government operations.</p>
+          </div>
+          <div class="card">
+            <h3>Vendor Coordination</h3>
+            <p>Supplier outreach, quote collection, validation, and documentation coordination to support efficient procurement workflows.</p>
+          </div>
+          <div class="card">
+            <h3>Scalable Platform</h3>
+            <p>Built to support both small and large procurement requirements while expanding service offerings over time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="capabilities">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Capabilities</h2>
+          <p class="section-copy">
+            Vanguard Veteran Systems supports procurement-driven supply and sourcing requirements where responsiveness, organization, and reliable follow-through are essential.
+          </p>
+        </div>
+
+        <div class="cap-grid">
+          <div class="cap">
+            <h3>Federal Sourcing &amp; Supply</h3>
+            <p>Product sourcing, vendor coordination, quote development, and fulfillment support aligned with government procurement requirements.</p>
+          </div>
+          <div class="cap">
+            <h3>Procurement Support</h3>
+            <p>Quote support, supplier communication, item verification, and coordination to help agencies and contractors move requirements forward efficiently.</p>
+          </div>
+          <div class="cap">
+            <h3>Industrial Supply</h3>
+            <p>Support for hardware, components, tools, and operational supply requirements through a sourcing-first approach.</p>
+          </div>
+          <div class="cap">
+            <h3>Expanding Capabilities</h3>
+            <p>Continuously building broader service offerings to support additional federal sourcing, supply, and contractor-facing opportunities.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="competencies">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Core Competencies</h2>
+          <p class="section-copy">
+            Standard capabilities commonly expected of a disciplined small-business federal supplier, presented in a clear format for agency and contractor review.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <div class="mini-card">
+            <h3>Responsive Sourcing</h3>
+            <p>Timely supplier outreach, quote collection, and market-based sourcing support tailored to procurement requirements.</p>
+          </div>
+          <div class="mini-card">
+            <h3>Supply Coordination</h3>
+            <p>Organized management of vendor communication, product confirmation, and requirement follow-through.</p>
+          </div>
+          <div class="mini-card">
+            <h3>Contract Support Readiness</h3>
+            <p>Professional presentation, documentation awareness, and procurement-oriented execution built for federal contracting environments.</p>
+          </div>
+          <div class="mini-card">
+            <h3>Scalable Growth Strategy</h3>
+            <p>Structured to expand from current sourcing and supply support into broader service and contracting capabilities over time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="differentiators">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Differentiators</h2>
+          <p class="section-copy">
+            Vanguard Veteran Systems is positioned to deliver the professionalism of a serious contractor while preserving the responsiveness of a focused small business.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <div class="mini-card">
+            <h3>Veteran Leadership</h3>
+            <p>Veteran-owned and service-disabled veteran-owned business positioned to support public-sector procurement with discipline and accountability.</p>
+          </div>
+          <div class="mini-card">
+            <h3>Direct Communication</h3>
+            <p>Clear, prompt communication and straightforward coordination that helps reduce delays and keep requirements moving.</p>
+          </div>
+          <div class="mini-card">
+            <h3>Procurement Focus</h3>
+            <p>Built around sourcing, supply, and contractor-facing support rather than generic marketing language or vague service positioning.</p>
+          </div>
+          <div class="mini-card">
+            <h3>Growth-Oriented Platform</h3>
+            <p>Deliberately broad enough to support expanding categories of work as vendor relationships and operational capacity continue to develop.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="codes">
+      <div class="container split">
+        <div class="card">
+          <div class="section-header">
+            <h2 class="section-title" style="font-size:2rem;">Selected NAICS Codes</h2>
+          </div>
+          <div class="code-list">
+            <div class="code-row"><span class="code-label">423710</span><span class="code-value">Hardware Merchant Wholesalers</span></div>
+            <div class="code-row"><span class="code-label">332722</span><span class="code-value">Bolt, Nut, Screw, Rivet &amp; Washer Manufacturing</span></div>
+            <div class="code-row"><span class="code-label">423610</span><span class="code-value">Electrical Apparatus &amp; Equipment Merchant Wholesalers</span></div>
+            <div class="code-row"><span class="code-label">423690</span><span class="code-value">Other Electronic Parts &amp; Equipment Merchant Wholesalers</span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="section-header">
+            <h2 class="section-title" style="font-size:2rem;">Selected PSC / FSC Codes</h2>
+          </div>
+          <div class="code-list">
+            <div class="code-row"><span class="code-label">5305</span><span class="code-value">Screws</span></div>
+            <div class="code-row"><span class="code-label">5306</span><span class="code-value">Bolts</span></div>
+            <div class="code-row"><span class="code-label">5310</span><span class="code-value">Nuts and Washers</span></div>
+            <div class="code-row"><span class="code-label">5340</span><span class="code-value">Commercial Hardware</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="capstmt">
+      <div class="container">
+        <div class="capstmt">
+          <div>
+            <div class="section-header" style="margin-bottom:14px;">
+              <h2 class="section-title">Capabilities Statement</h2>
+              <p class="section-copy">
+                A concise summary of Vanguard Veteran Systems’ current positioning, focus areas, and business identifiers for agency and contractor reference.
+              </p>
+            </div>
+            <a class="btn btn-primary" href="mailto:raymond@vanguardveteransystems.com?subject=Capabilities%20Statement%20Request">Request Capabilities Statement</a>
+          </div>
+          <div class="code-list">
+            <div class="code-row"><span class="code-label">Business Name</span><span class="code-value">Vanguard Veteran Systems</span></div>
+            <div class="code-row"><span class="code-label">CAGE</span><span class="code-value">9GTX4</span></div>
+            <div class="code-row"><span class="code-label">Status</span><span class="code-value">Veteran-Owned / SDV-Owned</span></div>
+            <div class="code-row"><span class="code-label">Primary Focus</span><span class="code-value">Federal Sourcing &amp; Supply</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="contact-wrap">
+          <div class="contact-card contact-main">
+            <img class="contact-inline-logo" src="vanguard-logo.png" alt="Vanguard Veteran Systems logo" />
+
+            <div class="section-header">
+              <h2 class="section-title">Contact Us</h2>
+              <p class="section-copy">
+                For sourcing inquiries, procurement support, contracting opportunities, or supplier coordination, please contact Vanguard Veteran Systems directly.
+              </p>
+            </div>
+
+            <div class="contact-actions">
+              <a class="btn btn-primary" href="tel:8054412945">Call 805-441-2945</a>
+              <a class="btn btn-outline" href="sms:8054412945">Text Us</a>
+              <a class="btn btn-outline" href="mailto:raymond@vanguardveteransystems.com">Email Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img class="footer-logo" src="vanguard-logo.png" alt="Vanguard Veteran Systems logo" />
+        <div>© 2026 Vanguard Veteran Systems. All rights reserved.</div>
+      </div>
+      <div>Veteran-Owned • Service-Disabled Veteran-Owned • Federal Supply &amp; Contracting Support</div>
+    </div>
+  </footer>
+</body>
+</html>
